@@ -3,5 +3,5 @@
 
 
 {% for post in mahmoud %}
-    <h3><a href="{% url 'single_post' post.id%}"> {{post}} - {{post.content}}</a></h3>
+    <h3><a href="{% url 'single_post' post.id %}"> {{post}} - {{post.content}}</a></h3>
 {% endfor %}
