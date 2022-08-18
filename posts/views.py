@@ -34,7 +34,9 @@ def edit_post(request,id):
     if request.method == 'POST':
         form = PostForm(request.POST,instance=post)
         if form.is_valid():
-            form.save()
+            myform = form.save(commit=False)
+            myform.author = request.user
+            myform.save()
     else:
         form = PostForm(instance=post)
     return render(request,'edit.html',{'form': form})
